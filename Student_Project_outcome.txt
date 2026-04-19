@@ -1,0 +1,132 @@
+
+
+Layer1 
+
+1. project structure 
+2. no of microservices in a project 
+3. backend - > python java golang 
+
+| Component          | Purpose                           |
+| ------------------ | --------------------------------- |
+| **User**           | Sends request from browser/mobile |
+| **API Service**    | Handles HTTP request              |
+| **Redis Cache**    | Fast memory storage               |
+| **Worker Service** | Background processing             |
+| **Database**       | Permanent data storage            |
+
+4. Technology Mapping
+
+| Layer         | Example Tools           |
+| ------------- | ----------------------- |
+| API           | Python / Node / Go      |
+| Cache         | Redis                   |
+| Queue         | RabbitMQ / Apache Kafka |
+| Worker        | Background microservice |
+| Database      | PostgreSQL              |
+| Container     | Docker                  |
+| Orchestration | Kubernetes              |
+
+5.4️⃣ Full Backend Tech Stack
+
+Users
+  |
+  v
+Load Balancer
+  |
+  v
+API Gateway
+  |
+  v
+Microservice 1 (API)
+  |
+  v
+Redis Cache
+  |
+  v
+Message Queue
+  |
+  v
+Worker Microservice
+  |
+  v
+Database
+
+6. ️ DevOps Infrastructure View
+
+This is how a DevOps engineer usually sees the system.
+
+                Internet
+                    |
+                Load Balancer
+                    |
+             Kubernetes Service
+                    |
+                API Pods
+                    |
+               Redis Cache
+                    |
+               Message Queue
+                    |
+              Worker Pods
+                    |
+                Database
+
+
+| Component          | DevOps Responsibility  |
+| ------------------ | ---------------------- |
+| Load Balancer      | Traffic distribution   |
+| Kubernetes Service | Internal networking    |
+| API Pods           | Application containers |
+| Redis              | Cache layer            |
+| Worker Pods        | Background jobs        |
+| Database           | Persistent storage 
+
+
+Layer2
+
+1. backend code 
+2. docker same as project1 
+
+Layer3 
+
+docker compose 
+create services 
+  connect two folder api worker 
+  redis 
+  api:
+  worker: 
+
+Layer4 
+
+two microservice api outputs 
+
+docker compose up --build
+
+docker compose down. -- 3 conatiner removed 
+docker compose up --build
+
+
+Layer 5 project output 
+
+1. 🌐 Test the API. --> api 
+
+http://localhost:5001
+ 
+2.  docker compose logs worker
+
+venkatesh@venkateshs-MacBook-Pro ~ % docker exec -it project-redis-1 redis-cli
+127.0.0.1:6379> GET worker_status
+"running"
+127.0.0.1:6
+
+
+# Project outcome 
+
+1. multi service architecrture 
+two service 
+2. container Orchestration
+api container 
+worker container runs 
+3. service communication 
+api - redis 
+worker -redis 
