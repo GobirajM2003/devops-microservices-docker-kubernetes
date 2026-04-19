@@ -86,8 +86,8 @@ kubectl get svc
 minikube ip
 
 Open:
-
 http://<minikube-ip>:<nodeport>
+
 📊 Features
 Microservices architecture
 Redis-based state management
@@ -100,6 +100,5 @@ Kubernetes deployments & services
 Microservices communication
 DevOps workflow understanding
 👨‍💻 Author
-
-Gobi Raj
+Gobiraj M
 Aspiring DevOps Engineer 🚀
